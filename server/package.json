@@ -1,0 +1,20 @@
+{
+  "name": "MoviesFS",
+  "version": "1.0.0",
+  "description": "Full Stack App with NodeJS, React, TypeScript and GraphQL",
+  "private": true,
+  "author": "VO",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev-server": "nodemon --watch ./ -r ts-node/register ./index.ts"
+  },
+  "devDependencies": {
+    "@apollo/datasource-rest": "^6.0.1",
+    "@apollo/server": "^4.7.5",
+    "graphql": "^16.7.1",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}

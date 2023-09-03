@@ -1,0 +1,15 @@
+{
+  "name": "MoviesFS",
+  "version": "1.0.0",
+  "description": "Full Stack App with NodeJS, React, TypeScript and GraphQL",
+  "private": true,
+  "author": "VO",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"yarn --cwd client dev\" \"yarn --cwd server dev-server\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {}
+}
