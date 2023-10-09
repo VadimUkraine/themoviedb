@@ -14,9 +14,9 @@ The source of data is https://developers.themoviedb.org/3.
 ## Downloading
 
 ```
-git clone https://github.com/VadimUkraine/nodejs2022Q4-service.git
+git clone https://github.com/VadimUkraine/themoviedb.git
 
-cd nodejs2022Q4-service
+cd themoviedb
 
 ```
 
@@ -27,6 +27,8 @@ npm start
 ```
 
 After starting the app on port (4200 as default) it will open in browser.
+
+## App pages descriptions
 
 ### Dashboard Page
 
