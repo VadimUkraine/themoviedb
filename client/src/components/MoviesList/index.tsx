@@ -2,8 +2,14 @@ import React, { FC } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { MovieCard } from "../MovieCard";
+import { MoviesListProps } from "./types";
 
-export const MoviesList: FC = ({ listTitle, list }) => {
+export const MoviesList: FC<MoviesListProps> = ({
+  listTitle,
+  list,
+  btnDetailsText,
+  noImageText
+}) => {
   return (
     <Box
       sx={{
@@ -11,14 +17,16 @@ export const MoviesList: FC = ({ listTitle, list }) => {
         flexDirection: "column"
       }}
     >
-      <Typography
-        gutterBottom
-        variant="h6"
-        component="div"
-        sx={{ mb: "20px", fontWeight: 600 }}
-      >
-        {listTitle}
-      </Typography>
+      {listTitle && listTitle.length > 0 && (
+        <Typography
+          gutterBottom
+          variant="h6"
+          component="div"
+          sx={{ mb: "20px", fontWeight: 600 }}
+        >
+          {listTitle}
+        </Typography>
+      )}
       <Box
         sx={{
           display: "flex",
@@ -39,6 +47,8 @@ export const MoviesList: FC = ({ listTitle, list }) => {
               title={title}
               releaseDate={releaseDate}
               posterPath={posterPath}
+              btnText={btnDetailsText}
+              noImageText={noImageText}
             />
           )
         )}

@@ -1,7 +1,7 @@
 {
   "name": "MoviesFS",
   "version": "1.0.0",
-  "description": "Full Stack App with NodeJS, React, TypeScript and GraphQL",
+  "description": "Full Stack App with NodeJS, Apollo Client, React, TypeScript and GraphQL",
   "private": true,
   "author": "VO",
   "license": "MIT",
@@ -10,6 +10,5 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.0"
-  },
-  "dependencies": {}
+  }
 }

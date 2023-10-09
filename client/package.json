@@ -1,7 +1,7 @@
 {
   "name": "MoviesFS",
   "version": "1.0.0",
-  "description": "Full Stack App with NodeJS, React, TypeScript and GraphQL",
+  "description": "Full Stack App with NodeJS, React, TypeScript, Apollo Client and GraphQL",
   "private": true,
   "author": "VO",
   "license": "MIT",
@@ -20,15 +20,19 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --history-api-fallback --open",
     "typescript": "tsc",
-    "lint": "eslint './src/**/*.{ts,tsx}'",
-    "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix"
+    "lint": "eslint \"./src/**/*.ts[x]\"",
+    "lint:fix": "eslint \"./src/**/*.{ts,tsx}\" --fix"
   },
   "dependencies": {
     "@apollo/client": "^3.7.17",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.6",
+    "@mui/x-date-pickers": "^6.12.1",
+    "dayjs": "^1.11.9",
+    "dotenv": "^16.3.1",
     "graphql": "^16.7.1",
+    "nanoid": "^5.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.1",

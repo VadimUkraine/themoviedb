@@ -1,4 +1,12 @@
-const getCrewWithDepartments = (crew) => {
+type Crew = {
+  id: string;
+  name: string;
+  known_for_department: string;
+  profile_path: string;
+  job: string;
+};
+
+const getCrewWithDepartments = (crew: Crew[]) => {
   const data = {};
   const departments: string[] = Array.from(
     new Set(crew.map((item) => item.known_for_department))
@@ -9,7 +17,9 @@ const getCrewWithDepartments = (crew) => {
   });
 
   crew.forEach((item) => {
-    if (!data[item.known_for_department].find((elem) => elem.id === item.id)) {
+    if (
+      !data[item.known_for_department].find((elem: Crew) => elem.id === item.id)
+    ) {
       data[item.known_for_department].push({
         id: item.id,
         name: item.name,

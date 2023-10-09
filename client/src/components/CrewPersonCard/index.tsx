@@ -2,8 +2,12 @@ import React, { FC } from "react";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import { CrewPersonCardProps } from "./types";
 
-export const CrewPersonCard: FC = ({ person }) => {
+export const CrewPersonCard: FC<CrewPersonCardProps> = ({
+  person,
+  noImageText
+}) => {
   return (
     <Box
       sx={{
@@ -40,7 +44,7 @@ export const CrewPersonCard: FC = ({ person }) => {
             flexDirection: "column"
           }}
         >
-          No image
+          {noImageText || "No image"}
         </Typography>
       )}
       <Box

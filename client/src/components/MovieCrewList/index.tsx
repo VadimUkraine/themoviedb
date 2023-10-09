@@ -2,8 +2,13 @@ import React, { FC } from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { CrewPersonCard } from "../CrewPersonCard";
+import { MovieCrewListProps } from "./types";
 
-export const MovieCrewList: FC = ({ department, departmentCrew }) => {
+export const MovieCrewList: FC<MovieCrewListProps> = ({
+  department,
+  departmentCrew,
+  noImageText
+}) => {
   return (
     <Box
       sx={{
@@ -34,7 +39,11 @@ export const MovieCrewList: FC = ({ department, departmentCrew }) => {
         }}
       >
         {departmentCrew.map((person) => (
-          <CrewPersonCard key={person.id} person={person} />
+          <CrewPersonCard
+            key={person.id}
+            person={person}
+            noImageText={noImageText}
+          />
         ))}
       </Box>
     </Box>

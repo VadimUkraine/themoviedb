@@ -3,8 +3,13 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import getCrewWithDepartments from "../../helpers/getCrewWithDepartments";
 import { MovieCrewList } from "../MovieCrewList";
+import { MovieCrewProps } from "./types";
 
-export const MovieCrew: FC = ({ crew }) => {
+export const MovieCrew: FC<MovieCrewProps> = ({
+  crew,
+  crewHeaderText,
+  noImageText
+}) => {
   const crewWithDepartments = getCrewWithDepartments(crew);
   const departments = Object.keys(crewWithDepartments);
 
@@ -28,7 +33,7 @@ export const MovieCrew: FC = ({ crew }) => {
           fontSize: "1.3rem"
         }}
       >
-        Crew
+        {crewHeaderText || "Crew"}
         <Typography
           variant="body2"
           sx={{
@@ -45,6 +50,7 @@ export const MovieCrew: FC = ({ crew }) => {
           key={department}
           department={department}
           departmentCrew={crewWithDepartments[department]}
+          noImageText={noImageText}
         />
       ))}
     </Box>

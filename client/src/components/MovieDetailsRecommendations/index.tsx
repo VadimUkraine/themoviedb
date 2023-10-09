@@ -2,8 +2,11 @@ import React, { FC } from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { RecommendationCard } from "../../components/RecommendationCard";
+import { MovieDetailsRecommendationsProps } from "./types";
 
-export const MovieDetailsRecommendations: FC = ({ recommendations }) => {
+export const MovieDetailsRecommendations: FC<
+  MovieDetailsRecommendationsProps
+> = ({ recommendations, recommendationsHeaderText }) => {
   return (
     <Box
       sx={{
@@ -21,7 +24,7 @@ export const MovieDetailsRecommendations: FC = ({ recommendations }) => {
           mb: "20px"
         }}
       >
-        Recommendations
+        {recommendationsHeaderText || "Recommendations"}
       </Typography>
       <Box
         sx={{

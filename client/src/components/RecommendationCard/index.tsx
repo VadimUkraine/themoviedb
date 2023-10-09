@@ -2,8 +2,19 @@ import React, { FC } from "react";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../constants/api";
+import { RecommendationProps } from "./types";
 
-export const RecommendationCard: FC = ({ recommendation }) => {
+export const RecommendationCard: FC<RecommendationProps> = ({
+  recommendation
+}) => {
+  const navigate = useNavigate();
+
+  const handleShowDetails = () => {
+    navigate(`${ROUTES.movieDetails}/${recommendation.id}`);
+  };
+
   return (
     <Box
       sx={{
@@ -14,17 +25,20 @@ export const RecommendationCard: FC = ({ recommendation }) => {
     >
       {recommendation.poster_path ? (
         <CardMedia
+          onClick={handleShowDetails}
           image={recommendation.poster_path}
           component="img"
           sx={{
             width: "190px",
             height: "200px",
             borderRadius: "15px",
-            objectFit: "fill"
+            objectFit: "fill",
+            cursor: "pointer"
           }}
         />
       ) : (
         <Typography
+          onClick={handleShowDetails}
           variant="body2"
           sx={{
             fontSize: "1rem",
@@ -37,7 +51,8 @@ export const RecommendationCard: FC = ({ recommendation }) => {
             justifyContent: "center",
             pr: "3px",
             pl: "3px",
-            flexDirection: "column"
+            flexDirection: "column",
+            cursor: "pointer"
           }}
         >
           No image

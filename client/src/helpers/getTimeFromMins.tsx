@@ -1,7 +1,11 @@
-const getTimeFromMins = (mins: number): string => {
+const getTimeFromMins = (
+  mins: number,
+  hourReductionText: string,
+  minuteReductionText: string
+): string => {
   const hours = Math.trunc(mins / 60);
   const minutes = mins % 60;
-  return `${hours}h ${minutes}m`;
+  return `${hours}${hourReductionText} ${minutes}${minuteReductionText}`;
 };
 
 export default getTimeFromMins;

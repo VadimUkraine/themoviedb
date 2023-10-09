@@ -1,7 +1,10 @@
+/* eslint-disable no-param-reassign */
 const path = require("path");
 const { merge } = require("webpack-merge");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
+const dotenv = require("dotenv");
+const webpack = require("webpack");
 const webpackConfigDev = require("./webpack/webpack.config.dev");
 const webpackConfigProd = require("./webpack/webpack.config.prod");
 
@@ -17,12 +20,20 @@ const babelOptions = (preset) => {
   return opts;
 };
 
+const env = dotenv.config({ path: `./.env` }).parsed || {};
+
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
+
 const webpackConfigCommon = {
   context: path.resolve(__dirname, "src"),
   entry: ["babel-polyfill", "./index.tsx"],
   output: {
-    filename: `[name].[contenthash].js`,
-    path: path.resolve(__dirname, "public")
+    filename: `[name].contenthash].js`,
+    path: path.resolve(__dirname, "public"),
+    publicPath: "/"
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"]
@@ -38,7 +49,8 @@ const webpackConfigCommon = {
       minify: {
         collapseWhitespace: true
       }
-    })
+    }),
+    new webpack.DefinePlugin(envKeys)
   ],
   module: {
     rules: [

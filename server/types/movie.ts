@@ -5,7 +5,7 @@ type Movie = {
   release_date: string;
 };
 
-type MoliesList = {
+type MoviesList = {
   playing: [Movie];
   upcoming: [Movie];
   popular: [Movie];
@@ -44,15 +44,22 @@ type MovieDetails = {
   recommendations: [Recommendations];
 };
 
-// type MovieDetails = {
-//   id: string;
-//   title: string;
-//   poster_path: string;
-//   overview: string;
-//   release_date: string;
-//   tagline: string;
-//   backdrop_path: string;
-//   genres: [string];
-// };
+type FilteredMoviesList = {
+  list: [Movie];
+  totalPages: number;
+};
 
-export { Movie, MoliesList, MovieDetails };
+type Genre = {
+  id: number;
+  name: string;
+};
+
+export {
+  Movie,
+  MoviesList,
+  MovieDetails,
+  FilteredMoviesList,
+  Genre,
+  MovieCrew,
+  Recommendations
+};
