@@ -10,6 +10,7 @@ The source of data is https://developers.themoviedb.org/3.
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).
 - Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
+- Yarn - [Download & Install Yarn](https://classic.yarnpkg.com/en/docs/getting-started) - package manager.
 
 ## Downloading
 
@@ -22,8 +23,14 @@ cd themoviedb
 
 ## Running application
 
+First you need to install the dependencies using yarn in the folders client, server
+and in the main folder.
+
+After it the application is ready to run.
+Use the command below in the main folder to start the application
+
 ```
-npm start
+yarn start
 ```
 
 After starting the app on port (4200 as default) it will open in browser.
@@ -58,6 +65,7 @@ Movie list management page, available only to registered users: allows to create
 
 - Localization - RU/EN languages
 - User authorization
+- Information about users and wishlists is stored in a local database
 
 ### Debugging in VSCode
 
