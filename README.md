@@ -23,11 +23,23 @@ cd themoviedb
 
 ## Running application
 
-First you need to install the dependencies using yarn in the folders client, server
-and in the main folder.
+First you need to install the dependencies in main folder.
+Use this command:
 
-After it the application is ready to run.
-Use the command below in the main folder to start the application
+```
+yarn install
+```
+
+After it you need to install the dependencies in subfolders.
+Use this command:
+
+```
+yarn install-modules
+```
+
+This command will also start the application.
+
+In the future, you can use the following command to start the application
 
 ```
 yarn start

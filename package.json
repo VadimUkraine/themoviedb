@@ -6,7 +6,8 @@
   "author": "VO",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"yarn --cwd client dev\" \"yarn --cwd server dev-server\""
+    "start": "concurrently \"yarn --cwd client dev\" \"yarn --cwd server dev-server\"",
+    "install-modules": "concurrently \"yarn --cwd client install-modules\" \"yarn --cwd server install-modules\" && yarn start"
   },
   "devDependencies": {
     "concurrently": "^8.2.0"
